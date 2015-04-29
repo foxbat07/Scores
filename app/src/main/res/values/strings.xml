@@ -15,9 +15,8 @@
     <string name="GameInfoFragmentName">Enter Game</string>
 
 
-
-    <string-array name="autocomplete_team">
-        <item>Atlanta Hawks</item>
+    <string-array name="teams_array">
+    <item>Atlanta Hawks</item>
         <item>Boston Celtics</item>
         <item>Brooklyn Nets</item>
         <item>Charlotte Bobcats</item>

@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements GameInfoFragment.GameInfoListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,26 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
+    public void onDialogPositiveClick(DialogFragment dialog, String s1, String s2, String s3, String s4) {
+        // User touched the dialog's positive button
 
+
+        TextView textViewTeamOne = (TextView) findViewById(R.id.textViewTeam1);
+        //String TT1 = dialog.getText(R.id.autoCompleteTextView1).toString();
+
+        textViewTeamOne.setText(s1);
+
+        TextView textViewTeamTwo = (TextView) findViewById(R.id.textViewTeam2);
+        textViewTeamTwo.setText(s2);
+
+        TextView textViewScoreOne = (TextView) findViewById(R.id.teamOneScore);
+        textViewScoreOne.setText(s3);
+
+        TextView textViewScoreTwo = (TextView) findViewById(R.id.teamTwoScore);
+        textViewScoreTwo.setText(s4);
+
+
+    }
 
     public void showDatePickerDialog (View v) {
         DialogFragment newFragment = new DatePickerFragment();
@@ -38,6 +57,18 @@ public class MainActivity extends Activity {
         String date = "Date";
         TextView textViewToChange = (TextView) findViewById(R.id.currentDate);
         textViewToChange.setText(date);
+
+        TextView textViewTeamOne = (TextView) findViewById(R.id.textViewTeam1);
+        textViewTeamOne.setText("Team 1");
+
+        TextView textViewTeamTwo = (TextView) findViewById(R.id.textViewTeam2);
+        textViewTeamTwo.setText("Team 2");
+
+        TextView textViewScoreOne = (TextView) findViewById(R.id.teamOneScore);
+        textViewScoreOne.setText("0");
+
+        TextView textViewScoreTwo = (TextView) findViewById(R.id.teamTwoScore);
+        textViewScoreTwo.setText("0");
 
 
 

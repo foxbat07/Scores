@@ -48,20 +48,12 @@ public class DatePickerFragment extends DialogFragment
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
 
-
-
+        // creating a string out of the date and pushing it to  the textview
 
         Calendar nc = Calendar.getInstance();
         nc.set(year,month,day);
-        //String DateString = nc.get
-
-        //SimpleDateFormat sdf = new SimpleDateFormat("MM dd, yyyy");
-        //String DateString = sdf.format(nc);
-        //SimpleDateFormat df = new SimpleDateFormat("MMM-dd-yyyy");
         SimpleDateFormat df = new SimpleDateFormat("MMMM dd,yyyy");
-
         String DateString = df.format(nc.getTime());
-
         TextView textViewToChange = (TextView) getActivity().findViewById(R.id.currentDate);
         textViewToChange.setText(DateString);
 
